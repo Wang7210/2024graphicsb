@@ -1,7 +1,7 @@
 #include <GL/glut.h>
-float teapotX=0.5,teapotY=0;
-float angle=0;
-float s=0.3;
+
+float s=1;
+
 void display()
 
 {
@@ -10,8 +10,6 @@ void display()
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glColor3f(0,1,0);
     glPushMatrix();
-    glRotatef(angle++,0,0,1);
-        glTranslatef(teapotX,teapotY,0);
         glScalef(s,s,s);
         glutSolidTeapot(0.3);
     glPopMatrix();
@@ -32,8 +30,6 @@ int main(int argc,char*argv[])
     glutInitDisplayMode(GLUT_DOUBLE|GLUT_DEPTH);
 
     glutCreateWindow("week04 mouse glScalef");
-
-    glutIdleFunc(display);
 
     glutDisplayFunc(display);
 
